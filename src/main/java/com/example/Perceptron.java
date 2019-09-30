@@ -1,6 +1,7 @@
 package com.example;
 
 class Perceptron {
+    public static final double THRESHOLD = 1.0;
     static final int[][][] andData = {
             {{0, 0}, {0}},
             {{0, 1}, {0}},
@@ -19,11 +20,7 @@ class Perceptron {
     }
 
     int applyActivationFunction(double weightedSum) {
-        int result = 0;
-        if (weightedSum > 1) {
-            result = 1;
-        }
-        return result;
+        return (weightedSum > THRESHOLD) ? 1 : 0;
     }
 
     double[] adjustWeights(int[] data, double[] weights, double error) {
