@@ -1,15 +1,15 @@
 package com.example;
 
 class Perceptron {
-    public static final double THRESHOLD = 1.0;
+    public static final double THRESHOLD = 0.0;
     static final int[][][] andData = {
-            {{0, 0}, {0}},
-            {{0, 1}, {0}},
-            {{1, 0}, {0}},
-            {{1, 1}, {1}}
+            {{1, 0, 0}, {0}},
+            {{1, 0, 1}, {0}},
+            {{1, 1, 0}, {0}},
+            {{1, 1, 1}, {1}}
     };
     private static final double LEARNING_RATE = 0.05;
-    static final double[] INITIAL_WEIGHTS = {Math.random(), Math.random()};
+    static final double[] INITIAL_WEIGHTS = {Math.random(), Math.random(), Math.random()};
 
     double calculateWeightedSum(int[] data, double[] weights) {
         double weightedSUm = 0;
@@ -30,4 +30,5 @@ class Perceptron {
         }
         return adjustedWeights;
     }
+
 }
